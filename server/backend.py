@@ -21,7 +21,7 @@ try:
 except Exception as error:  
     print("**Error:", error)
 
-app = Flask(__name__, static_folder='')
+app = Flask(__name__, static_folder='../client/dist',static_url_path="/")
 CORS(app,origins='*')  #accept cross site  
 
 @app.route("/api/users",      methods=['GET'])
@@ -36,7 +36,7 @@ def users():
 # Path for our main Svelte page
 @app.route("/")
 def index():
-    return app.send_static_file('index.html')
+    return send_from_directory(app.static_folder,'index.html')
 
 @app.route("/ping")
 def home():
