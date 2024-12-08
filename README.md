@@ -1,22 +1,22 @@
 # zork
-<<<<<<< HEAD
-
-group routes : https://svelte.dev/tutorial/kit/route-groups
-
-## Creating a project
-
-npm install
-npm run dev
-npm run build
+Zork remake using svelte
 
 ## deploy
+if __name__ == '__main__':
+    app.run( port=8080)  <-- cannot be debug
 
-https://www.youtube.com/watch?v=LaMVBDbUtMA
+## workflow
+Root vercel login
+Root activate venv 
+Client npmn run build
+Root python backend.py
+Or Root python debugger/Flask launch and debug
 
+## routing
+https://stackoverflow.com/questions/20646822/how-to-serve-static-files-in-flask
 
-You can preview the production build with `npm run preview`.
+## todo
+is zork name allowed ?
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
-=======
-Zork remake using svelte
->>>>>>> bac6ce433732db88d04aa8e336ef2efcbd398d7d
+latest version requirements.txt
+includes flask....
