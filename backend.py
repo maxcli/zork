@@ -5,6 +5,8 @@ from flask import Flask, request, make_response,jsonify,send_from_directory, ren
 from flask_cors import CORS
 import requests
 import anthropic
+from waitress import serve
+#from models  import db,User
  
 try:
 
@@ -24,6 +26,9 @@ except Exception as error:
 # https://stackoverflow.com/questions/20646822/how-to-serve-static-files-in-flask
 app = Flask(__name__, static_folder='client/dist',static_url_path="/")  
 CORS(app,origins='*')  #accept cross site  
+
+#db.init_app(app)
+#db.create_all()
 
 @app.route("/api/users", methods=['GET'])
 def users():
@@ -73,4 +78,5 @@ def analyze_text():
     
 
 if __name__ == '__main__':
-    app.run( port=8080)
+    serve(app, host="0.0.0.0", port=8080, threads=2)
+    #app.run( port=8080)
